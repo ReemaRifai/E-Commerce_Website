@@ -1,0 +1,62 @@
+/* CSS Document */
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	font-size:34px;
+	color: #BE398D;
+	align-content: center;
+}
+
+input[type=text] ,input[type=password]{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+	background-color: #cfcef0;
+}
+
+
+input[type=submit] ,input[type=reset] {
+    background-color: #98d984;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+}
+
+
+
+input[type=submit]:hover {
+    background-color: #c9e396;
+}
+select
+{
+	   width:100%;
+	   padding:8px;
+	   font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	   font-size:16px;
+	   background-color:#cfcef0;
+}
+
+table {
+ display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+

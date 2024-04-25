@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Reservation Page</title>
+	<link rel="stylesheet" type="text/css" href="registerstyles.css">
+	<script type="text/javascript">
+		function validateFullName()
+		{
+			var fname = document.getElementById("txtFullName").value ;
+			
+			if((fname == "") || (fname == null))
+				{
+					alert("Please Enter Your Full Name");
+					return false;
+				}
+			return true;
+		}
+		
+		function validateEmail()
+		{
+			var email = document.getElementById("txtEmail").value ;
+			var at = email.indexOf("@");
+			var dt = email.lastIndexOf(".");
+			var len = email.length;
+			
+			if((at < 2 ) || (dt-at < 2) || (len-dt < 2))
+				{
+					alert("Please Enter a valid Email Address");
+					return false;
+				}
+			return true;
+		}
+		
+		function validatePassword()
+		{
+			var password = document.getElementById("txtPassword").value ;
+			var Cpassword = document.getElementById("txtConfirmPassword").value ;
+			var confirm;
+			
+			if((password.length < 7) || (password != Cpassword))
+				{
+					alert("Please Enter a valid Password");
+					return false;
+				}
+			return true;
+		}
+		
+		function validateRadioBtn()
+		{
+			if((document.getElementById("rdoOption_0").checked) || (document.getElementById("rdoOption_1").checked))
+				{
+					return true;
+				}
+			alert("Please select one option");
+			return false;
+		}
+		
+		function validateAll()
+		{
+			if(validateFullName() && validateEmail() && validatePassword() && validateRadioBtn())
+				{
+					alert("Reservation has been added!!!")
+				}
+			else{
+				event.preventDefault();
+			}
+		}
+		
+		
+	</script>
+	
+	
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<table width="478" border="0" align="center">
+  <tr>
+    <td colspan="2"><h1 align="center">REGISTER NOW</h1></td>
+    </tr>
+  <tr>
+    <td width="251">Full Name</td>
+    <td width="217"><label for="txtFullName"></label>
+      <input type="text" name="txtFullName" id="txtFullName" /></td>
+  </tr>
+  <tr>
+    <td>Email Address</td>
+    <td><label for="txtEmail"></label>
+      <input type="text" name="txtEmail" id="txtEmail" /></td>
+  </tr>
+  <tr>
+    <td>Set Password</td>
+    <td><label for="txtPassword"></label>
+      <input type="password" name="txtPassword" id="txtPassword" /></td>
+  </tr>
+  <tr>
+    <td>Confrim Password</td>
+    <td><label for="txtConfirmPassword"></label>
+      <input type="password" name="txtConfirmPassword" id="txtConfirmPassword" /></td>
+  </tr>
+  <tr>
+    <td>Tour Type</td>
+    <td>
+    <label for="lstTourType"></label>
+      <select name="lstTourType" id="lstTourType">
+		<option value="">-----------Select-----------</option>
+        <option value="One Day Tour">One Day Tour</option>
+        <option value="Two Days Tour">Two Days Tour</option>
+        <option value="Half Day Tour">Half Day Tour</option>
+      </select>
+      </td>
+  </tr>
+  <tr>
+    <td>Is this your first Reservation</td>
+    <td><p>
+      <label>
+        <input type="radio" name="rdoOption" value="Yes" id="rdoOption_0" />
+        Yes</label>
+      <br />
+      <label>
+        <input type="radio" name="rdoOption" value="No" id="rdoOption_1" />
+        No</label>
+      <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td>
+    <input type="checkbox" name="chkEmailMe" id="chkEmailMe" />
+      <label for="chkEmailMe"></label>
+      Email me the latest updates</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="71"><input type="submit" name="btnSubmit" id="btnSubmit" value="Submit" onclick="validateAll()"/>     
+         <input type="reset" name="btnReset" id="btnReset" value="Reset" /></td>
+    
+  </tr>
+</table>
+</form>
+</body>
+</html>
